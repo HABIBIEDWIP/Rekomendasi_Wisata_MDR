@@ -1,0 +1,129 @@
+{% extends 'layout.html'%}
+
+{%block title %} about {% endblock %}
+
+{%block content %}
+<!-- About Start -->
+<div class="container-fluid py-3">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-6" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" src="{{ url_for('static', filename='img/about.jpg') }}" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 pt-5 pb-lg-5">
+                <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
+                    <h1 class="text-primary text-uppercase" style="letter-spacing: 5px;">Tentang Produk</h1>
+                    <h6 class="mb-3"><p align="justify">
+                        Sistem Rekomendasi Wisata dengan Item Based Collaborative filtering adalah sebuah sistem yang bertujuan untuk meningkatkan literasi siswa SMK Pariwisata terkhususnya mengenai pengenalan tempat wisata di pulau Madura. Sistem ini dapat merekomendasikan tempat wisata yang sesuai dengan minat dan preferensi siswa berdasarkan data yang telah dikumpulkan dari pengguna lain. Dengan adanya sistem ini,diharapkan siswa dapat mengembangkan pengetahuan dan pemahaman mereka tentang tempat-tempat wisata yang menarik.
+                    </p>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <img class="img-fluid" src="{{ url_for('static', filename='img/Wisata pamekasan.png') }}">
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid" src="{{ url_for('static', filename='img/Wisata1.png') }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+ <!-- Team Start -->
+ <div class="container-fluid py-3">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Tim Penyusun</h6>
+            <h1>SI-TAMA</h1>
+        </div>
+        <div class="row align="center">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1 text-center">
+                <div class="team-item bg-white mb-4">
+                    <div class="team-img position-justify overflow-hidden">
+                        <img class="img-fluid w-100" src="{{ url_for('static', filename='img/Team/buetis.png') }}" alt="">
+                    </div>
+                    <div class="text-center py-4">
+                        <h5 class="text-truncate">Bu Etis</h5>
+                        <p class="m-0">Dosen Pembimbing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1 text-center">
+                <div class="team-item bg-white mb-4">
+                    <div class="team-img position-justify overflow-hidden">
+                        <img class="img-fluid w-100" src="{{ url_for('static', filename='img/Team/Habibi.png') }}" alt="">
+                    </div>
+                    <div class="text-center py-4">
+                        <h5 class="text-truncate">Habibi</h5>
+                        <p class="m-0">Penata Desain Web</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1 text-center">
+                <div class="team-item bg-white mb-4">
+                    <div class="team-img position-justify overflow-hidden">
+                        <img class="img-fluid w-100" src="{{ url_for('static', filename='img/Team/ella.png') }}" alt="">
+                    </div>
+                    <div class="text-center py-4">
+                        <h5 class="text-truncate">Ella</h5>
+                        <p class="m-0">Penata Proposal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1 text-center">
+                <div class="team-item bg-white mb-4">
+                    <div class="team-img position-justify overflow-hidden">
+                        <img class="img-fluid w-100" src="{{ url_for('static', filename='img/Team/faradina.png') }}" alt="">
+                    </div>
+                    <div class="text-center py-4">
+                        <h5 class="text-truncate">Faradina</h5>
+                        <p class="m-0">Penata Database dan Proposal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 150px;">
+    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 150px;">
+        <div class="row pt-5">
+            <div class="col-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/footer1.png' ) }}">
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/KampusMerdeka1.png' ) }}">
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/footer1.png' ) }}">
+            </div>
+            <div class="col-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/KampusMerdeka1.png' ) }}">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="row">
+        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white-50">Copyright &copy; <a href="{{url_for ('home')}}">PIF 2024</a>. All Rights Reserved.</a>
+            </p>
+        </div>
+        <div class="col-lg-6 text-center text-md-right">
+            <p class="m-0 text-white-50">Designed by <a href="{{url_for ('home')}}">NAMA_TIM</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+{% endblock %}

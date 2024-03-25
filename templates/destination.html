@@ -1,0 +1,101 @@
+{% extends 'layout.html'%}
+
+{%block title %} destination {% endblock %}
+
+{%block content %}
+<div class="container-fluid py-3">
+    <div class="container pb-5">
+        <form action="/rekomendasi_des" method="post">
+            <div class="row align-items-center" style="min-height: 10px;">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-3 mb-md-0">
+                                <select class="custom-select px-4" name="filter_data" id="filter_data" style="width: 930px;height: 47px;">
+                                    <option value="TAG" selected>Filter</option>
+                                    <option value="Lokasi">Lokasi Wisata</option>
+                                    <option value="TAG">Tag</option>
+                                    <option value="Harga Tiket">Harga Tiket</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-block" type="submit"
+                        style="height: 47px; margin-top: -2px;">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destinasi Tempat</h6>
+            <h1>Rekomendasi Wisata</h1>
+        </div>
+        <div class="row">
+            <!-- Loping -->
+            {% for a,b in res.items() %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="package-item bg-white mb-2">
+                    <img class="img-fluid"
+                        src="/static/img/Kumpulan Gambar/{{b['Images']}}" alt="">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ b['Lokasi'] }}</small>
+                            <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ b['Jenis Wisata'] }}</small>
+                        </div>
+                        <a class="h5 text-decoration-none" href="">{{ b['Nama Wisata'] }}</a>
+                        <div class="border-top mt-4 pt-4">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>{{ b['Ratings'] }}</h6>
+                                <h5 class="m-0">{{ b['Harga Tiket'] }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- End Looping -->
+        </div>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 150px;">
+    <div class="row pt-5">
+        <div class="col-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/footer1.png' ) }}">
+        </div>
+        <div class="col-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/KampusMerdeka1.png' ) }}">
+        </div>
+        <div class="col-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/footer1.png' ) }}">
+        </div>
+        <div class="col-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/KampusMerdeka1.png' ) }}">
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
+    style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="row">
+        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white-50">Copyright &copy; <a href="{{url_for ('home')}}">PIF 2024</a>. All Rights Reserved.</a>
+            </p>
+        </div>
+        <div class="col-lg-6 text-center text-md-right">
+            <p class="m-0 text-white-50">Designed by <a href="{{url_for ('home')}}">NAMA_TIM</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+{% endblock %}
